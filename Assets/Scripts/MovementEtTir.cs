@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public float speed = 0.2f;
     public int Score;
+    public int Kills;
 
     // Start is called before the first frame update
     void Start()
@@ -64,11 +65,17 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(limitL.position.x, transform.position.y, transform.position.z);
         }
+
+        if (Kills >= 39)
+        {
+
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Score++;
+        Kills++;
         Destroy(collision.gameObject);
         monUi.text = "J'ai " + Score + " de bonus";
     }
