@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.right*speed;
         }
-        if (Score < 1)
+        if (Score < 5)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -39,12 +39,20 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Score >= 1)
+        if (Score >= 5)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.left * 0.9f, parent.rotation);
                 Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.right*1.1f, parent.rotation);
+            }
+        }
+
+        if (Score >= 10)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Instantiate(bullet, parent.position + Vector3.up * 3, parent.rotation);
             }
         }
 
