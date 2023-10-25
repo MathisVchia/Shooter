@@ -150,4 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobs: {fileID: 6128441405271233860}
-  speed: {fileID: 0}
+  player: {fileID: 0}
+  referenceLibrary: {fileID: 0}
