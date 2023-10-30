@@ -32,6 +32,16 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.right*speed;
         }
+        if (Input.GetKey(KeyCode.LeftShift)&&Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position += Vector3.left * (speed*3);
+
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += Vector3.right * (speed * 3);
+
+        }
         if (Score < 5)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -77,6 +87,6 @@ public class Player : MonoBehaviour
         Score++;
         Kills++;
         Destroy(collision.gameObject);
-        monUi.text = "J'ai " + Score + " de bonus";
+        monUi.text = "Bonus : " + Score;
     }
 }
