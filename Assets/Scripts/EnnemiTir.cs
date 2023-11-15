@@ -22,7 +22,7 @@ public class EnnemiTir : MonoBehaviour
 
         if (bulletTimer >= 2.0f)
         {
-            Instantiate(bulletEnnemis, parent.position, parent.rotation);
+            Instantiate(bulletEnnemis, transform.position, transform.rotation);
             bulletTimer = 0.0f;
         }
     }
