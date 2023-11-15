@@ -26,4 +26,10 @@ public class EnnemiTir : MonoBehaviour
             bulletTimer = 0.0f;
         }
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
+
+    }
 }
