@@ -7,6 +7,7 @@ public class EnnemiTir : MonoBehaviour
 
     public GameObject bulletEnnemis;
     public Transform parent;
+    public GameObject Triangle;
 
     public float bulletTimer = 0.0f;
     // Start is called before the first frame update
