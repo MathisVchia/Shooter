@@ -9,6 +9,7 @@ public class EnnemiTir : MonoBehaviour
     public Transform parent;
     public GameObject Triangle;
 
+
     public float bulletTimer = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,19 @@ public class EnnemiTir : MonoBehaviour
 
         if (bulletTimer >= 2.0f)
         {
-            Instantiate(bulletEnnemis, transform.position, transform.rotation);
+            Instantiate(bulletEnnemis, transform.position + Vector3.down, transform.rotation);
             bulletTimer = 0.0f;
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        MovementEtTir ennemy = collision.gameObject.GetComponent<MovementEtTir>();
+        if (ennemy != null)
+        {
+            
+            Destroy(gameObject);
 
+        }
     }
 }

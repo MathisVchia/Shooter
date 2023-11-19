@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Player : MonoBehaviour
+public class MovementEtTir : MonoBehaviour
 {
     public GameObject bullet;
     public Transform parent;
@@ -54,8 +54,8 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.left * 0.9f, parent.rotation);
-                Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.right*1.1f, parent.rotation);
+                Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.left * 0.9f, transform.rotation);
+                Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.right*1.1f, transform.rotation);
             }
         }
 
@@ -76,10 +76,6 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(limitL.position.x, transform.position.y, transform.position.z);
         }
 
-        if (Kills >= 39)
-        {
-
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
