@@ -7,6 +7,7 @@ public class BulletEnnemi : MonoBehaviour
     public Rigidbody2D monRigidBody;
     public float speed;
     public GameObject Bonus;
+    public int PV;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,11 @@ public class BulletEnnemi : MonoBehaviour
         MovementEtTir ennemy = collision.gameObject.GetComponent<MovementEtTir>();
         if (ennemy != null)
         {
-
-            Destroy(collision.gameObject);
+            PV -= 1;
+            if (PV <= 0)
+            {
+                Destroy(collision.gameObject);
+            }
 
         }
     }

@@ -14,11 +14,12 @@ public class MovementEtTir : MonoBehaviour
     public float speed = 0.2f;
     public int Score;
     public int Kills;
+    public int PV;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        PV = 3;
     }
 
     // Update is called once per frame
