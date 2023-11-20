@@ -13,11 +13,15 @@ public class BulletEnnemi : MonoBehaviour
         monRigidBody.velocity = Vector3.down * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        MovementEtTir ennemy = collision.gameObject.GetComponent<MovementEtTir>();
+        if (ennemy != null)
+        {
 
+            Destroy(collision.gameObject);
+
+        }
     }
 
 }

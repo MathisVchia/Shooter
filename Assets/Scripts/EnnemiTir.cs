@@ -29,14 +29,5 @@ public class EnnemiTir : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        MovementEtTir ennemy = collision.gameObject.GetComponent<MovementEtTir>();
-        if (ennemy != null)
-        {
-            
-            Destroy(gameObject);
-
-        }
-    }
+    
 }
