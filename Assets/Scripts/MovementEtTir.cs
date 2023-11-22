@@ -11,6 +11,9 @@ public class MovementEtTir : MonoBehaviour
     public Transform limitR;
     public TextMeshProUGUI monUi;
 
+    public AudioSource audioSource;
+    public AudioSource spaceSound;
+
     public float speed = 0.2f;
     public int Score;
     public int Kills;
@@ -20,6 +23,12 @@ public class MovementEtTir : MonoBehaviour
     void Start()
     {
         PV = 3;
+        // Initialisation de l'AudioSource
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Resources.Load<AudioClip>("Dash");
+
+        spaceSound = GetComponent<AudioSource>();
+        spaceSound.clip = Resources.Load<AudioClip>("piouh v2");
     }
 
     // Update is called once per frame
@@ -36,11 +45,13 @@ public class MovementEtTir : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift)&&Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left * (speed*3);
+            PlaySound(audioSource);
 
         }
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * (speed * 3);
+            PlaySound(audioSource);
 
         }
         if (Score < 5)
@@ -48,6 +59,7 @@ public class MovementEtTir : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(bullet, parent.position + Vector3.up * 1.1f, parent.rotation);
+                PlaySound(spaceSound);
             }
         }
 
@@ -57,6 +69,7 @@ public class MovementEtTir : MonoBehaviour
             {
                 Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.left * 0.9f, transform.rotation);
                 Instantiate(bullet, parent.position + Vector3.up * 2 + Vector3.right*1.1f, transform.rotation);
+                PlaySound(spaceSound);
             }
         }
 
@@ -65,6 +78,7 @@ public class MovementEtTir : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(bullet, parent.position + Vector3.up * 3, parent.rotation);
+                PlaySound(spaceSound);
             }
         }
 
@@ -85,5 +99,13 @@ public class MovementEtTir : MonoBehaviour
         Kills++;
         Destroy(collision.gameObject);
         monUi.text = "Bonus : " + Score;
+    }
+
+    void PlaySound(AudioSource audioSource)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }
