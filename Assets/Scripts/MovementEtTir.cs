@@ -91,7 +91,6 @@ public class MovementEtTir : MonoBehaviour
             transform.position = new Vector3(limitL.position.x, transform.position.y, transform.position.z);
         }
 
-        monUi.text = "Bonus" + Score;
 
     }
 
