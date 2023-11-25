@@ -91,7 +91,6 @@ public class MovementEtTir : MonoBehaviour
             transform.position = new Vector3(limitL.position.x, transform.position.y, transform.position.z);
         }
 
-
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
