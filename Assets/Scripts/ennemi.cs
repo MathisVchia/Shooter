@@ -6,7 +6,7 @@ public class ennemi : MonoBehaviour
 {
 
     public GameObject mobs;
-    public MovementEtTir player;
+    public MovementShot player;
     private Transform limitL;
     private Transform limitR;
     private bool direction;

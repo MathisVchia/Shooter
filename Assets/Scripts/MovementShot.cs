@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MovementEtTir : MonoBehaviour
+public class MovementShot : MonoBehaviour
 {
     public GameObject bullet;
     public Transform parent;

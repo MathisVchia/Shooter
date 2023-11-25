@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnnemiTir : MonoBehaviour
+public class EnnemiShot : MonoBehaviour
 {
 
     public GameObject bulletEnnemis;
